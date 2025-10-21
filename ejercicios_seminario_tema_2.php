@@ -68,3 +68,22 @@ function esPalin($frase){
 echo esPalin($frase);
 
 //Ejercicio 5. Contar ocurrencias de una letra.
+echo "\n\n";
+echo "Ejercicio 5";
+echo "\n";
+
+$texto = readline("Introduce el texto: ");
+$texto = strtolower($texto);
+$letra = readline("Introduce la palabra a contar: ");
+
+function contarLetra($texto, $letra){
+    $contador = 0;
+    for ($i = 0; $i < strlen($texto); $i++) {
+        if ($texto[$i] === $letra) {
+            $contador++;
+        }
+    }
+    return $contador;
+}
+
+echo "La letra '" . $letra . "' aparece " . contarLetra($texto, $letra) . " veces en el texto.";
