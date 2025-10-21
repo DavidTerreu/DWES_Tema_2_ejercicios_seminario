@@ -57,19 +57,12 @@ echo "\n";
 $frase = readline("Introduce una palabra: ");
 
 function esPalin($frase){
-    $res = "";
-    for ($i = 0; $i < count($frase); $i++) {
-        $j = count($frase);
-        if ($frase[$i] !== $frase[j) - 1]) {
-            $res += "No es palíndromo";
-            break;
-        } else $j--;
-        if ($i >= $j) {
-            $res += "Es palíndromo";
-            break;
+    for ($i = 0, $j = strlen($frase) -1; $i < $j; $i++, $j--) {
+        if ($frase[$i] !== $frase[$j]) {
+            return "No es palíndromo";
         }
     }
-    return $res;
+    return "Es palíndromo";
 }
 
 echo esPalin($frase);
