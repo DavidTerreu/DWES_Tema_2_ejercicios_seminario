@@ -74,7 +74,7 @@ echo "\n";
 
 $texto = readline("Introduce el texto: ");
 $texto = strtolower($texto);
-$letra = readline("Introduce la palabra a contar: ");
+$letra = readline("Introduce la letra a contar: ");
 
 function contarLetra($texto, $letra){
     $contador = 0;
@@ -87,3 +87,49 @@ function contarLetra($texto, $letra){
 }
 
 echo "La letra '" . $letra . "' aparece " . contarLetra($texto, $letra) . " veces en el texto.";
+
+//Ejercicio 6. Contar ocurrencias de una subcadena.
+echo "\n\n";
+echo "Ejercicio 6";
+echo "\n";
+
+$texto6 = readline("Introduce el texto: ");
+$texto6 = strtolower($texto6);
+$subcadena = readline("Introduce la subcadena a contar: ");
+$subcadena = strtolower($subcadena);
+
+function contarSubcadena($texto6, $subcadena){
+    $contador = 0;
+    $tamSubcadena = strlen($subcadena);
+
+    for ($i = 0; $i <= strlen($texto6) - $tamSubcadena; $i++) {
+        $coincide = true;
+        for ($j = 0; $j < $tamSubcadena; $j++) {
+            if ($texto6[$i + $j] !== $subcadena[$j]) {
+                $coincide = false;
+                break;
+            }
+        }
+        if ($coincide) {
+            $contador++;
+        }
+    }
+    return $contador;
+}
+
+echo "La subcadena '" . $subcadena . "' aparece " . contarSubcadena($texto6, $subcadena) . " veces en el texto.";
+
+//Ejercicio 7. Capitalizar palabras.
+echo "\n\n";
+echo "Ejercicio 7";
+echo "\n";
+
+//Ejercicio 8. Suma de dígitos.
+echo "\n\n";
+echo "Ejercicio 8";
+echo "\n";
+
+//Ejercicio 9. Máximo común divisor (MCD).
+echo "\n\n";
+echo "Ejercicio 9";
+echo "\n";
