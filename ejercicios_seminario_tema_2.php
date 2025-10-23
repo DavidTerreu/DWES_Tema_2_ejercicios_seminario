@@ -142,6 +142,18 @@ echo "\n\n";
 echo "Ejercicio 8";
 echo "\n";
 
+$num8 = readline("Introduce un número: ");
+
+function sumaDigitos($num8){
+    $suma = 0;
+    for ($i = 0; $i < strlen($num8); $i++) {
+        $suma += intval($num8[$i]);
+    }
+    return $suma;
+}
+
+echo "La suma de los dígitos de " . $num8 . " es: " . sumaDigitos($num8);
+
 //Ejercicio 9. Máximo común divisor (MCD).
 echo "\n\n";
 echo "Ejercicio 9";
