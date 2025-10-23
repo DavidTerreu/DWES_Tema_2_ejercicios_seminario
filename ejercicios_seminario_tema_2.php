@@ -124,6 +124,19 @@ echo "\n\n";
 echo "Ejercicio 7";
 echo "\n";
 
+$texto7 = readline("Introduce el texto a capitalizar: ");
+$texto7 = strtolower($texto7);
+
+function capitalizarPalabras($texto7){
+    $palabras = explode(" ", $texto7);
+    for ($i = 0; $i < count($palabras); $i++) {
+        $palabras[$i] = ucfirst($palabras[$i]);
+    }
+    return implode(" ", $palabras);
+}
+
+echo capitalizarPalabras($texto7);
+
 //Ejercicio 8. Suma de dígitos.
 echo "\n\n";
 echo "Ejercicio 8";
