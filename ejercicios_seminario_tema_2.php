@@ -158,3 +158,63 @@ echo "La suma de los dígitos de " . $num8 . " es: " . sumaDigitos($num8);
 echo "\n\n";
 echo "Ejercicio 9";
 echo "\n";
+
+$num1 = intval(readline("Introduce el primer número: "));
+$num2 = intval(readline("Introduce el segundo número: "));
+
+function mcd($num1, $num2){
+    $arrayNum1 = [];
+    $arrayNum2 = [];
+    $contNum = 0;
+    $mcdMAX = 0;
+    for ($i = 1; $i <= $num1; $i++) {
+        if ($num1 % $i === 0) {
+            $arrayNum1[$contNum] = $i;
+            $contNum++;
+        }
+    }
+    $contNum = 0;
+    for ($i = 1; $i <= $num2; $i++) {
+        if ($num2 % $i === 0) {
+            $arrayNum2[$contNum] = $i;
+            $contNum++;
+        }
+    }
+
+    echo "Divisores de " . $num1 . ": ";
+    for ($i = 0; $i < count($arrayNum1); $i++) {
+        echo $arrayNum1[$i] . " ";
+    }
+    echo "\nDivisores de " . $num2 . ": ";
+    for ($i = 0; $i < count($arrayNum2); $i++) {
+        echo $arrayNum2[$i] . " ";
+    }
+
+    $primero = $arrayNum1;
+    $segundo = $arrayNum2;
+
+    if (count($arrayNum1) > count($arrayNum2)) {
+        $primero = $arrayNum2;
+        $segundo = $arrayNum1;
+    }
+
+    for ($i = 0; $i < count($primero); $i++) {
+        for ($j = 0; $j < count($segundo); $j++) {
+            if ($primero[$i] === $segundo[$j]) {
+                if ($primero[$i] > $mcdMAX) {
+                    $mcdMAX = $primero[$i];
+                }
+            }
+        }
+    }
+    echo "\nEl máximo común divisor (MCD) de " . $num1 . " y " . $num2 . " es: " . $mcdMAX;
+
+    if ($mcdMAX === 1) {
+        echo "\nLos números son primos relativos.";
+    } else {
+        echo "\nLos números no son primos relativos.";
+
+    }
+}
+
+mcd($num1, $num2);
