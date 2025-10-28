@@ -1,5 +1,6 @@
 <?php
 
+/*
 //Ejercicio 1. Número máximo de un array.
 echo "Ejercicio 1";
 echo "\n";
@@ -218,3 +219,93 @@ function mcd($num1, $num2){
 }
 
 mcd($num1, $num2);
+*/
+
+//Ejercicio 10. Fibonacci
+echo "\n\n";
+echo "Ejercicio 10";
+echo "\n";
+
+$numFibo = intval(readline("Introduce el número de la sucesión Fibonacci: "));
+
+function fibonacci($numFibo){
+    $a = 0;
+    $b = 1;
+    $secuencia = [];
+
+    for ($i = 0; $i < $numFibo; $i++) {
+        $secuencia[$i] = $a;
+        $aux = $a;
+        $a = $b;
+        $b = $aux + $b;
+    }
+    return $secuencia;
+}
+
+$secuencia = fibonacci($numFibo);
+echo "Fibonacci de los primeros " . $numFibo . " números): " . implode(", ", $secuencia) . "\n";
+
+//Ejercicio 11. Números primos relativos
+echo "\n\n";
+echo "Ejercicio 11";
+echo "\n";
+
+$numA = intval(readline("Introduce el primer número: "));
+$numB = intval(readline("Introduce el segundo número: "));
+
+function mcd($numA, $numB){
+    $arrayNumA = [];
+    $arrayNumB = [];
+    $cNum = 0;
+    $mcdM = 0;
+    for ($i = 1; $i <= $numA; $i++) {
+        if ($numA % $i === 0) {
+            $arrayNumA[$cNum] = $i;
+            $cNum++;
+        }
+    }
+    $cNum = 0;
+    for ($i = 1; $i <= $numB; $i++) {
+        if ($numB % $i === 0) {
+            $arrayNumB[$cNum] = $i;
+            $cNum++;
+        }
+    }
+
+    echo "Divisores de " . $numA . ": ";
+    for ($i = 0; $i < count($arrayNumA); $i++) {
+        echo $arrayNumA[$i] . " ";
+    }
+    echo "\nDivisores de " . $numB . ": ";
+    for ($i = 0; $i < count($arrayNumB); $i++) {
+        echo $arrayNumB[$i] . " ";
+    }
+
+    $primero = $arrayNumA;
+    $segundo = $arrayNumB;
+
+    if (count($arrayNumA) > count($arrayNumB)) {
+        $primero = $arrayNumB;
+        $segundo = $arrayNumA;
+    }
+
+    for ($i = 0; $i < count($primero); $i++) {
+        for ($j = 0; $j < count($segundo); $j++) {
+            if ($primero[$i] === $segundo[$j]) {
+                if ($primero[$i] > $mcdM) {
+                    $mcdM = $primero[$i];
+                }
+            }
+        }
+    }
+    echo "\nEl máximo común divisor (MCD) de " . $numA . " y " . $numB . " es: " . $mcdM;
+
+    if ($mcdM === 1) {
+        echo "\nLos números son primos relativos.";
+    } else {
+        echo "\nLos números no son primos relativos.";
+
+    }
+}
+
+mcd($numA, $numB);
