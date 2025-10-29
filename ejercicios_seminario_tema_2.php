@@ -154,7 +154,7 @@ function sumaDigitos($num8){
 }
 
 echo "La suma de los dígitos de " . $num8 . " es: " . sumaDigitos($num8);
-
+*/
 //Ejercicio 9. Máximo común divisor (MCD).
 echo "\n\n";
 echo "Ejercicio 9";
@@ -167,7 +167,6 @@ function mcd($num1, $num2){
     $arrayNum1 = [];
     $arrayNum2 = [];
     $contNum = 0;
-    $mcdMAX = 0;
     for ($i = 1; $i <= $num1; $i++) {
         if ($num1 % $i === 0) {
             $arrayNum1[$contNum] = $i;
@@ -209,17 +208,10 @@ function mcd($num1, $num2){
         }
     }
     echo "\nEl máximo común divisor (MCD) de " . $num1 . " y " . $num2 . " es: " . $mcdMAX;
-
-    if ($mcdMAX === 1) {
-        echo "\nLos números son primos relativos.";
-    } else {
-        echo "\nLos números no son primos relativos.";
-
-    }
 }
 
 mcd($num1, $num2);
-*/
+
 
 //Ejercicio 10. Fibonacci
 echo "\n\n";
@@ -253,7 +245,7 @@ echo "\n";
 $numA = intval(readline("Introduce el primer número: "));
 $numB = intval(readline("Introduce el segundo número: "));
 
-function mcd($numA, $numB){
+function mcd2($numA, $numB){
     $arrayNumA = [];
     $arrayNumB = [];
     $cNum = 0;
@@ -308,4 +300,9 @@ function mcd($numA, $numB){
     }
 }
 
-mcd($numA, $numB);
+mcd2($numA, $numB);
+
+//Ejercicio 12. Número capicúa
+echo "\n\n";
+echo "Ejercicio 12";
+echo "\n";
