@@ -154,7 +154,7 @@ function sumaDigitos($num8){
 }
 
 echo "La suma de los dígitos de " . $num8 . " es: " . sumaDigitos($num8);
-*/
+
 //Ejercicio 9. Máximo común divisor (MCD).
 echo "\n\n";
 echo "Ejercicio 9";
@@ -307,4 +307,76 @@ echo "\n\n";
 echo "Ejercicio 12";
 echo "\n";
 
-//ejercicio 12
+$esNum = false;
+
+do {
+    $numCapi = readline("Introduce el número: ");
+
+    if (is_numeric($numCapi)) {
+        $esNum = true;
+    } else echo "Por favor, introduce un número válido.\n";
+
+} while (!$esNum || $numCapi < 0);
+
+function esCapicua($numCapi){
+    for ($i = 0, $j = strlen($numCapi) -1; $i < $j; $i++, $j--) {
+        if ($numCapi[$i] !== $numCapi[$j]) {
+            return "No es capicúa.";
+        }
+    }
+    return "Es capicúa.";
+}
+
+echo esCapicua($numCapi);
+*/
+//Ejercicio 13. Generador de tabla HTML
+echo "\n\n";
+echo "Ejercicio 13";
+echo "\n";
+
+$atribClass = ".";
+$atribID = "#";
+$esClase = false;
+$esID = false;
+$generador = "";
+
+$cadenatxt = readline("Introduce la cadena de texto: ");
+
+for ($i = 0; $i < strlen($cadenatxt); $i++) {
+    if ($cadenatxt[$i] === $atribClass) {
+        $esClase = true;
+    }
+    if ($cadenatxt[$i] === $atribID) {
+        $esID = true;
+    }
+}
+
+$arrayclass = explode(".", $cadenatxt);
+$arrayID = explode("#", $cadenatxt[1]);
+
+for ($i = 0; $i < count($arrayclass); $i++) {
+    echo $arrayclass[$i]."\n";
+}
+for ($i = 0; $i < count($arrayID); $i++) {
+    echo $arrayID[$i]."\n";
+}
+
+$generador .= "<" . $arrayclass[0];
+
+if ($esClase) {
+    $generador .= " class =" . $arrayclass[1];
+    if ($esID) {
+        $generador .= '"' . $arrayclass[1] . '" id ="' . $arrayID[1] . '">';
+    } else {
+        $generador .= '"' . $arrayclass[1] . '">';
+    }
+}
+
+/*
+if ($esClase) {
+    $arrayclass = explode(".", $cadenatxt);
+    $generador += "<" . $arrayclass[0] . " class =" . $arrayclass[1] . "></" . $arrayclass[0] . ">";
+} elseif ($esID) {
+    $arrayID = explode("#", $cadenatxt);
+} else echo "<" . $cadenatxt . "></" . $cadenatxt . ">";
+*/
