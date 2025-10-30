@@ -306,3 +306,5 @@ mcd2($numA, $numB);
 echo "\n\n";
 echo "Ejercicio 12";
 echo "\n";
+
+//ejercicio 12
