@@ -539,8 +539,25 @@ function factorial($num){
 }
 
 echo factorial($num);
-*/
+
 //Ejercicio 21. Invertir cadena
 echo "\n\n";
 echo "Ejercicio 21";
+echo "\n";
+
+$texto = readline("Introduce el texto para invertir: ");
+
+function invertirCadena($texto){
+    $textoInvertido = "";
+    for ($i = strlen($texto) - 1; $i >= 0; $i--) {
+        $textoInvertido .= $texto[$i];
+    }
+    return $textoInvertido;
+}
+
+echo invertirCadena($texto);
+*/
+//Ejercicio 22. Número perfecto
+echo "\n\n";
+echo "Ejercicio 22";
 echo "\n";
