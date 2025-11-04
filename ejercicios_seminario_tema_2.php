@@ -480,7 +480,7 @@ $arrayPares = filtrarPares($array);
 foreach ($arrayPares as $valor) {
     echo $valor . " ";
 }
-*/
+
 //Ejercicio 18. Número primo
 echo "\n\n";
 echo "Ejercicio 18";
@@ -505,4 +505,25 @@ echo esprimo($num);
 //Ejercicio 19. Eliminar vocales
 echo "\n\n";
 echo "Ejercicio 19";
+echo "\n";
+
+$texto = readline("Introduce el texto para eliminar vocales: ");
+
+function eliminarVocales($texto){
+    $vocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    $resultado = "";
+
+    for ($i = 0; $i < strlen($texto); $i++) {
+        if (!in_array($texto[$i], $vocales)) {
+            $resultado .= $texto[$i];
+        }
+    }
+    return $resultado;
+}
+
+echo eliminarVocales($texto);
+*/
+//Ejercicio 20. Factorial
+echo "\n\n";
+echo "Ejercicio 20";
 echo "\n";
