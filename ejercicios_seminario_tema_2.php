@@ -328,7 +328,7 @@ function esCapicua($numCapi){
 }
 
 echo esCapicua($numCapi);
-*/
+
 //Ejercicio 13. Generador de tabla HTML
 echo "\n\n";
 echo "Ejercicio 13";
@@ -371,12 +371,17 @@ if ($esClase) {
         $generador .= '"' . $arrayclass[1] . '">';
     }
 }
-
-/*
-if ($esClase) {
-    $arrayclass = explode(".", $cadenatxt);
-    $generador += "<" . $arrayclass[0] . " class =" . $arrayclass[1] . "></" . $arrayclass[0] . ">";
-} elseif ($esID) {
-    $arrayID = explode("#", $cadenatxt);
-} else echo "<" . $cadenatxt . "></" . $cadenatxt . ">";
 */
+//Ejercicio 14. Mosaico numérico
+echo "\n\n";
+echo "Ejercicio 14";
+echo "\n";
+
+$num = readline("Introduce el límite del mosaico numérico: ");
+
+for ($i = 1; $i <= $num; $i++) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo $i . " ";
+    }
+    echo "\n";
+}
