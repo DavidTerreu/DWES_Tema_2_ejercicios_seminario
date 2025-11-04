@@ -522,8 +522,25 @@ function eliminarVocales($texto){
 }
 
 echo eliminarVocales($texto);
-*/
+
 //Ejercicio 20. Factorial
 echo "\n\n";
 echo "Ejercicio 20";
+echo "\n";
+
+$num = intval(readline("Introduce el número: "));
+
+function factorial($num){
+    $fact = 1;
+    for ($i = 2; $i <= $num; $i++) {
+        $fact *= $i;
+    }
+    return $fact;
+}
+
+echo factorial($num);
+*/
+//Ejercicio 21. Invertir cadena
+echo "\n\n";
+echo "Ejercicio 21";
 echo "\n";
