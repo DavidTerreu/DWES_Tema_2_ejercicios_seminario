@@ -449,7 +449,7 @@ function producto($array){
 }
 
 echo producto($array);
-*/
+
 //Ejercicio 17. Filtrar números pares
 echo "\n\n";
 echo "Ejercicio 17";
@@ -480,8 +480,29 @@ $arrayPares = filtrarPares($array);
 foreach ($arrayPares as $valor) {
     echo $valor . " ";
 }
-
+*/
 //Ejercicio 18. Número primo
 echo "\n\n";
 echo "Ejercicio 18";
+echo "\n";
+
+$num = intval(readline("Introduce el número: "));
+
+function esPrimo($num){
+    if ($num <= 1) {
+        return "No es primo.";
+    }
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i === 0) {
+            return "No es primo.";
+        }
+    }
+    return "Es primo.";
+}
+
+echo esprimo($num);
+
+//Ejercicio 19. Eliminar vocales
+echo "\n\n";
+echo "Ejercicio 19";
 echo "\n";
