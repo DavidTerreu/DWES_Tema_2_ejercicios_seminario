@@ -379,9 +379,54 @@ echo "\n";
 
 $num = readline("Introduce el límite del mosaico numérico: ");
 
-for ($i = 1; $i <= $num; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo $i . " ";
+function mosaico($num){
+    for ($i = 1; $i <= $num; $i++) {
+        for ($j = 1; $j <= $i; $j++) {
+            echo $i . " ";
+        }
+        echo "\n";
     }
-    echo "\n";
 }
+mosaico($num);
+
+//Ejercicio 15. Comparar arrays elemento a elemento
+echo "\n\n";
+echo "Ejercicio 15";
+echo "\n";
+
+$arrayA = [];
+$arrayB = [];
+
+$largo = readline("Introduce el límite de los arrays: ");
+
+for ($i = 0; $i < $largo; $i++) {
+    echo "Introduce el elemento " . ($i + 1) . " del array A: ";
+    $arrayA[$i] = readline();
+}
+
+for ($i = 0; $i < $largo; $i++) {
+    echo "Introduce el elemento " . ($i + 1) . " del array B: ";
+    $arrayB[$i] = readline();
+}
+
+function comparacion($arrayA, $arrayB){
+    $arrayFinal = [];
+    for ($i = 0; $i < count($arrayA); $i++) {
+        if ($arrayA[$i] === $arrayB[$i]) {
+            $arrayFinal[$i] = true;
+        } else {
+            $arrayFinal[$i] = false;
+        }
+    }
+    return $arrayFinal;
+}
+
+$arrayFinal = comparacion($arrayA, $arrayB);
+foreach ($arrayFinal as $valor) {
+    echo ($valor ? 'true' : 'false') . " ";
+}
+
+//Ejercicio 16. Producto de elementos de un array
+echo "\n\n";
+echo "Ejercicio 16";
+echo "\n";
