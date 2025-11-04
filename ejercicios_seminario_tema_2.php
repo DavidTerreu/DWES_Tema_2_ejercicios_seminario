@@ -425,7 +425,7 @@ $arrayFinal = comparacion($arrayA, $arrayB);
 foreach ($arrayFinal as $valor) {
     echo ($valor ? 'true' : 'false') . " ";
 }
-*/
+
 //Ejercicio 16. Producto de elementos de un array
 echo "\n\n";
 echo "Ejercicio 16";
@@ -449,8 +449,39 @@ function producto($array){
 }
 
 echo producto($array);
-
+*/
 //Ejercicio 17. Filtrar números pares
 echo "\n\n";
 echo "Ejercicio 17";
+echo "\n";
+
+$array = [];
+
+$largo = readline("Introduce el límite del array: ");
+
+for ($i = 0; $i < $largo; $i++) {
+    echo "Introduce el elemento " . ($i + 1) . " del array: ";
+    $array[$i] = readline();
+}
+
+function filtrarPares($array){
+    $arrayPares = [];
+    $cont = 0;
+    for ($i = 0; $i < count($array); $i++) {
+        if ($array[$i] % 2 === 0) {
+            $arrayPares[$cont] = $array[$i];
+            $cont++;
+        }
+    }
+    return $arrayPares;
+}
+
+$arrayPares = filtrarPares($array);
+foreach ($arrayPares as $valor) {
+    echo $valor . " ";
+}
+
+//Ejercicio 18. Número primo
+echo "\n\n";
+echo "Ejercicio 18";
 echo "\n";
