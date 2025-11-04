@@ -371,7 +371,7 @@ if ($esClase) {
         $generador .= '"' . $arrayclass[1] . '">';
     }
 }
-*/
+
 //Ejercicio 14. Mosaico numérico
 echo "\n\n";
 echo "Ejercicio 14";
@@ -425,8 +425,32 @@ $arrayFinal = comparacion($arrayA, $arrayB);
 foreach ($arrayFinal as $valor) {
     echo ($valor ? 'true' : 'false') . " ";
 }
-
+*/
 //Ejercicio 16. Producto de elementos de un array
 echo "\n\n";
 echo "Ejercicio 16";
+echo "\n";
+
+$array = [];
+
+$largo = readline("Introduce el límite del array: ");
+
+for ($i = 0; $i < $largo; $i++) {
+    echo "Introduce el elemento " . ($i + 1) . " del array: ";
+    $array[$i] = readline();
+}
+
+function producto($array){
+    $num = 1;
+    for ($i = 0; $i < count($array); $i++) {
+        $num *= $array[$i];
+    }
+    return $num;
+}
+
+echo producto($array);
+
+//Ejercicio 17. Filtrar números pares
+echo "\n\n";
+echo "Ejercicio 17";
 echo "\n";
