@@ -561,3 +561,26 @@ echo invertirCadena($texto);
 echo "\n\n";
 echo "Ejercicio 22";
 echo "\n";
+
+$num = intval(readline("Introduce el número: "));
+
+function esPerfecto($num){
+    $sumaDivisores = 0;
+    for ($i = 1; $i < $num; $i++) {
+        if ($num % $i === 0) {
+            $sumaDivisores += $i;
+        }
+    }
+    if ($sumaDivisores === $num) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+echo (esPerfecto($num) ? 'true' : 'false');
+
+//Ejercicio 23. Número Armstrong
+echo "\n\n";
+echo "Ejercicio 23";
+echo "\n";
