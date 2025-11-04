@@ -556,7 +556,7 @@ function invertirCadena($texto){
 }
 
 echo invertirCadena($texto);
-*/
+
 //Ejercicio 22. Número perfecto
 echo "\n\n";
 echo "Ejercicio 22";
@@ -579,8 +579,27 @@ function esPerfecto($num){
 }
 
 echo (esPerfecto($num) ? 'true' : 'false');
-
+*/
 //Ejercicio 23. Número Armstrong
 echo "\n\n";
 echo "Ejercicio 23";
 echo "\n";
+
+$num = intval(readline("Introduce el número: "));
+
+function esArmstrong($num){
+    $numStr = strval($num);
+    $numCifras = strlen($numStr);
+    $suma = 0;
+
+    for ($i = 0; $i < $numCifras; $i++) {
+        $cifra = intval($numStr[$i]);
+        $suma += pow($cifra, $numCifras);
+    }
+
+    if ($suma === $num) {
+        return true;
+    } else {
+        return false;
+    }
+}
