@@ -649,7 +649,7 @@ switch($cliente){
 
         break;
 }
-*/
+
 //Ejercicio 25. Clasificador de notas con match
 echo "\n\n";
 echo "Ejercicio 25";
@@ -672,4 +672,39 @@ echo calcularNota($nota);
 //Ejercicio 26. Validador de datos con operador null coalescing
 echo "\n\n";
 echo "Ejercicio 26";
+echo "\n";
+
+$datos = '';
+
+$cliente = [
+    'nombre' => null,
+    'email' => null,
+    'edad' => null,
+    'ciudad' => null
+];
+
+foreach ($cliente as $key => &$value) {
+    $dato = readline("Introduce " . $key. " (deja en blanco para omitir): ");
+    if ($dato !== '') {
+        $value = $dato;
+    } else {
+        $value = null;
+    }
+}
+unset($value);
+
+function validarDatos($cliente){
+    $nombre = $cliente['nombre'] ?? 'Anónimo';
+    $email = $cliente['email'] ?? 'sin-email@example.com';
+    $edad = $cliente['edad'] ?? '18';
+    $ciudad = $cliente['ciudad'] ?? 'Desconocida';
+
+    return "Nombre: $nombre\nEmail: $email\nEdad: $edad\nCiudad: $ciudad\n";
+}
+
+echo validarDatos($cliente);
+*/
+//Ejercicio 27. Acceso seguro a propiedades con nullsafe operator
+echo "\n\n";
+echo "Ejercicio 27";
 echo "\n";
