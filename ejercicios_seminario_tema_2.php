@@ -579,7 +579,7 @@ function esPerfecto($num){
 }
 
 echo (esPerfecto($num) ? 'true' : 'false');
-*/
+
 //Ejercicio 23. Número Armstrong
 echo "\n\n";
 echo "Ejercicio 23";
@@ -605,8 +605,52 @@ function esArmstrong($num){
 }
 
 echo esArmstrong($num);
-
+*/
 //Ejercicio 24. Calculadora de descuentos con constantes
 echo "\n\n";
 echo "Ejercicio 24";
+echo "\n";
+
+const dto_estudiante = 15;
+const dto_jubilado = 20;
+const dto_vip = 25;
+
+function calcularDto($num, $dto){
+    $descuento = ($num * $dto) / 100;
+    $total = $num - $descuento;
+
+    return $total;
+}
+
+$num = intval(readline("Introduce la cifra para aplicar el descuento: "));
+
+echo "¿Para quién es el descuento?\n\n1. Estudiante (15%)\n2. Jubilado (20%)\n3. VIP (25%)\n";
+
+do{
+    $cliente = intval(readline("> "));
+
+    if($cliente < 0 || $cliente > 3) {
+        echo "Selecciona una opción válida.\n";
+    }
+
+}while($cliente < 0 || $cliente > 3);
+
+switch($cliente){
+    case 1:
+        echo "La cifra total con descuento de estudiante es: " . calcularDto($num, dto_estudiante);
+
+        break;
+    case 2:
+        echo "La cifra total con descuento de jubilado es: " . calcularDto($num, dto_jubilado);
+
+        break;
+    case 3:
+        echo "La cifra total con descuento VIP es: " . calcularDto($num, dto_vip);
+
+        break;
+}
+
+//Ejercicio 25. Clasificador de notas con match
+echo "\n\n";
+echo "Ejercicio 25";
 echo "\n";
