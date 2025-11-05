@@ -708,3 +708,30 @@ echo validarDatos($cliente);
 echo "\n\n";
 echo "Ejercicio 27";
 echo "\n";
+
+$usuario = [
+    'nombre' => 'Ana',
+    'direccion' => [
+        'calle' => 'Gran Vía',
+        'ciudad' => 'Madrid'
+    ]
+];
+
+function obtenerCiudad($usuario){
+    $ciudad = $usuario['direccion']['ciudad'] ?? 'Ciudad no disponible';
+    return $ciudad;
+}
+
+echo obtenerCiudad($usuario);
+
+/*
+//Ejercicio 28. Calculadora interactiva
+echo "\n\n";
+echo "Ejercicio 28";
+echo "\n";
+
+//Ejercicio 29. Conversor de temperaturas con constantes mágicas
+echo "\n\n";
+echo "Ejercicio 29";
+echo "\n";
+*/
