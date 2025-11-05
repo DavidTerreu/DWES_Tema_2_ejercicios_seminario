@@ -598,8 +598,15 @@ function esArmstrong($num){
     }
 
     if ($suma === $num) {
-        return true;
+        return "Es un número Armstrong.";
     } else {
-        return false;
+        return "No es un número Armstrong.";
     }
 }
+
+echo esArmstrong($num);
+
+//Ejercicio 24. Calculadora de descuentos con constantes
+echo "\n\n";
+echo "Ejercicio 24";
+echo "\n";
