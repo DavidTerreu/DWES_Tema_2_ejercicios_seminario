@@ -703,11 +703,13 @@ function validarDatos($cliente){
 }
 
 echo validarDatos($cliente);
-*/
+
 //Ejercicio 27. Acceso seguro a propiedades con nullsafe operator
 echo "\n\n";
 echo "Ejercicio 27";
 echo "\n";
+
+$dato = readline("¿A qué dato quieres acceder?");
 
 $usuario = [
     'nombre' => 'Ana',
@@ -717,19 +719,21 @@ $usuario = [
     ]
 ];
 
-function obtenerCiudad($usuario){
-    $ciudad = $usuario['direccion']['ciudad'] ?? 'Ciudad no disponible';
-    return $ciudad;
+function accederDatos(array $usuario, string $dato){
+    $user = json_decode(json_encode($usuario));
+
+    return $user->direccion?->{$dato} ?? $user->{$dato} ?? 'Dato no disponible';
 }
 
-echo obtenerCiudad($usuario);
+echo accederDatos($usuario, $dato);
+*/
 
-/*
 //Ejercicio 28. Calculadora interactiva
 echo "\n\n";
 echo "Ejercicio 28";
 echo "\n";
 
+/*
 //Ejercicio 29. Conversor de temperaturas con constantes mágicas
 echo "\n\n";
 echo "Ejercicio 29";
