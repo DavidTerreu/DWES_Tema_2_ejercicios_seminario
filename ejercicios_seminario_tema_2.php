@@ -605,7 +605,7 @@ function esArmstrong($num){
 }
 
 echo esArmstrong($num);
-*/
+
 //Ejercicio 24. Calculadora de descuentos con constantes
 echo "\n\n";
 echo "Ejercicio 24";
@@ -649,8 +649,27 @@ switch($cliente){
 
         break;
 }
-
+*/
 //Ejercicio 25. Clasificador de notas con match
 echo "\n\n";
 echo "Ejercicio 25";
+echo "\n";
+
+$nota = intval(readline("Introduce la nota: "));
+
+function calcularNota($nota){
+    return match (true) {
+        $nota >= 9 && $nota <= 10 => "Sobresaliente",
+        $nota >= 7 && $nota <= 8 => "Notable",
+        $nota >= 5 && $nota <= 6 => "Aprobado",
+        $nota >= 0 && $nota <= 4 => "Suspenso",
+        default => "Nota inválida",
+    };
+}
+
+echo calcularNota($nota);
+
+//Ejercicio 26. Validador de datos con operador null coalescing
+echo "\n\n";
+echo "Ejercicio 26";
 echo "\n";
