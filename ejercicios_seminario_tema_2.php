@@ -1,5 +1,7 @@
 <?php
-
+/*
+Está todo en un archivo, he ido comentando cada ejercicio para que no se pisen.
+*/
 /*
 //Ejercicio 1. Número máximo de un array.
 echo "Ejercicio 1";
@@ -783,3 +785,81 @@ echo "\n\n";
 echo "Ejercicio 29";
 echo "\n";
 
+const CELSIUS = 9/5;
+const FAHRENHEIT = 32;
+const KELVIN = 273.15;
+$isGrados = false;
+$isTemp = false;
+
+do{
+    $grados = readline("Introduce la temperatura: ");
+    if(is_numeric($grados)){
+        $grados = floatval($grados);
+        $isGrados = true;
+    }else{
+        echo "Por favor, introduce un número válido.\n";
+    }
+
+}while(!$isGrados);
+
+do{
+    $temp1 = readline("Introduce la conversión de origen (C-Celsius, F-Fahrenheit, K-Kelvin): ");
+    if($temp1 !== 'C' && $temp1 !== 'F' && $temp1 !== 'K'){
+        echo "Por favor, introduce una conversión válida.\n";
+    }else{
+        $isTemp = true;
+    }
+
+}while($temp1 !== 'C' && $temp1 !== 'F' && $temp1 !== 'K' || !$isTemp);
+
+do{
+    $isTemp = false;
+    $temp2 = readline("Introduce la conversión de destino (C-Celsius, F-Fahrenheit, K-Kelvin): ");
+    if($temp2 !== 'C' && $temp2 !== 'F' && $temp2 !== 'K'){
+        echo "Por favor, introduce una conversión válida.\n";
+    }else{
+        $isTemp = true;
+    }
+
+}while($temp2 !== 'C' && $temp2 !== 'F' && $temp2 !== 'K' || !$isTemp);
+
+function convertirTemperatura(float $grados, string $temp1, string $temp2) {
+
+    echo "Función " . __FUNCTION__ . " inicio en la línea " . __LINE__ . "\n";
+
+    if ($temp1 === $temp2) {
+        echo "Función " . __FUNCTION__ . " sin conversión en la línea " . __LINE__ . "\n";
+        return $grados;
+    }
+
+    if ($temp1 === 'C') {
+        if ($temp2 === 'F') {
+            echo "Función " . __FUNCTION__ . " conversión C->F en línea " . __LINE__ . "\n";
+            return ($grados * CELSIUS) + FAHRENHEIT;
+        } elseif ($temp2 === 'K') {
+            echo "Función " . __FUNCTION__ . " conversión C->K en línea " . __LINE__ . "\n";
+            return $grados + KELVIN;
+        }
+    } elseif ($temp1 === 'F') {
+        if ($temp2 === 'C') {
+            echo "Función " . __FUNCTION__ . " conversión F->C en línea " . __LINE__ . "\n";
+            return ($grados - FAHRENHEIT) * 5/9;
+        } elseif ($temp2 === 'K') {
+            echo "Función " . __FUNCTION__ . " conversión F->K en línea " . __LINE__ . "\n";
+            return (($grados - FAHRENHEIT) * 5/9) + KELVIN;
+        }
+    } elseif ($temp1 === 'K') {
+        if ($temp2 === 'C') {
+            echo "Función " . __FUNCTION__ . " conversión K->C en línea " . __LINE__ . "\n";
+            return $grados - KELVIN;
+        } elseif ($temp2 === 'F') {
+            echo "Función " . __FUNCTION__ . " conversión K->F en línea " . __LINE__ . "\n";
+            return (($grados - KELVIN) * 9/5) + FAHRENHEIT;
+        }
+    }
+
+    echo "Función " . __FUNCTION__ . " conversión inválida en la línea " . __LINE__ . "\n";
+    return "Conversión no válida.";
+}
+
+echo "La temperatura convertida es: " . convertirTemperatura($grados, $temp1, $temp2);
